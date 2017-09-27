@@ -2,17 +2,13 @@
 
 The objective of this project is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques I learned in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
-### How I get started with gulp?
+### How to get started with gulp?
+1. Download the project.
  ```bash
+  $> install -g gulp
   $> cd /path/to/your-project-folder
-  $> npm init
-  $> See `npm help json` for definitive documentation on these fields and exactly what they do
-  $> install packages npm install --save-dev gulp-uglify
-  $> install npm install --save-dev gulp-concat
-  $> install npm install --save-dev gulp-imagemin
-  $> install npm install --save-dev gulp-csso
-  $> install npm install --save-dev gulp-htmlmin
-  $> Run gulp
+  $> npm install --save-dev gulp
+  $> gulp
   ```
 ### Run index.html:
 1. Download the project.
@@ -42,13 +38,12 @@ The objective of this project is to optimize this online portfolio for speed! In
 *  Use gulp to minify HTML, JavaScript and CSS files.
 
 #### Part 2: Optimize Frames per Second in pizza.html
+* Declare a new variables outside the loops that holds the DOM queries, because loops are taking too much time when rendering the page and some elements only need to be declared one time.(line 572, 507, 361, 362, 363, 452, 480)
+* Add if condition to changePizzaSizes since all pizzas will have the same width, then no need to be calculated more than once.
+* Declare array length outside the loops.(line 546, 482)
 * Replace all querySelector with getElementById (lines: 410, 430, 487, 552, 407).
 * Replace querySelectorAll with getElementsByClassName (lines: 543, 480)
-* Declare a new variables outside the loops that holds the DOM queries, because loops are taking too much time when rendering the page and some elements only need to be declared one time.(line 572, 507, 361, 362, 363, 452, 480)
-* Declare array length outside the loops.(line 546, 482)
-* Since changePizzaSizes will apply the same pizza width for all pizzas, I added an if condition to calculate the dx and new width one time.
 * Add will-change: transform to randomPizzaContainer and mover in css file to tell the browser about an upcoming transformation.
 
 #### Resources
 * https://www.reddit.com/r/learnjavascript/comments/356k1v/confused_on_queryselector_and_getelementbyid/?st=j81tqjqk&sh=6c47b5a4
-* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
