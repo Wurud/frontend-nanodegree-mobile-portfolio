@@ -44,9 +44,14 @@ The objective of this project is to optimize this online portfolio for speed! In
 * Declare array length outside the loops.(line 546, 482)
 * Replace all querySelector with getElementById (lines: 410, 430, 487, 552, 407).
 * Replace querySelectorAll with getElementsByClassName (lines: 543, 480)
-* Add will-change: transform to randomPizzaContainer and mover in css file to tell the browser about an upcoming transformation.
+* Add will-change: transform; to randomPizzaContainer and mover in css file to tell the browser about an upcoming transformation.
+* Add backface-visibility: hidden; to the mover class in css file because it will make a huge difference and it is so powerful equipments as it enables hardware acceleration.
+* transform: translateZ(0); declaration triggers GPU acceleration in modern desktop and mobile browsers. This seems to be the most effective way of triggering GPU acceleration.
+* Reduce the number of the background Pizzas by dynamically calculate the number of pizzas needed to fill the screen.
 
 #### Resources
 * https://www.reddit.com/r/learnjavascript/comments/356k1v/confused_on_queryselector_and_getelementbyid/?st=j81tqjqk&sh=6c47b5a4
+* https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+* http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
 * https://www.youtube.com/watch?v=wNlEK8qrb0M&list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos
 * https://semaphoreci.com/community/tutorials/getting-started-with-gulp-js
