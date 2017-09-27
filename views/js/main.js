@@ -480,12 +480,14 @@ var resizePizzas = function(size) {
     var randomPizza = document.getElementsByClassName("randomPizzaContainer");
     // Calculate randomPizzaLength only one time.
     var randomPizzaLength = randomPizza.length;
+    // To be able to use it outside the loop scope
+    var newwidth;
     for (var i = 0; i < randomPizzaLength; i++) {
       if (i === 0) {
         //This will declace dx and the newwidth one time
         //to avoid FSL using if condition.
         var dx = determineDx(randomPizza[i], size);
-        var newwidth = (randomPizza[i].offsetWidth + dx) + 'px';
+        newwidth = (randomPizza[i].offsetWidth + dx) + 'px';
       }
       randomPizza[i].style.width = newwidth;
     }
