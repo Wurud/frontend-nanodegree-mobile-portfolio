@@ -48,3 +48,5 @@ The objective of this project is to optimize this online portfolio for speed! In
 
 #### Resources
 * https://www.reddit.com/r/learnjavascript/comments/356k1v/confused_on_queryselector_and_getelementbyid/?st=j81tqjqk&sh=6c47b5a4
+* https://www.youtube.com/watch?v=wNlEK8qrb0M&list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos
+* https://semaphoreci.com/community/tutorials/getting-started-with-gulp-js
