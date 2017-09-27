@@ -38,7 +38,8 @@ The objective of this project is to optimize this online portfolio for speed! In
 *  Use gulp to minify HTML, JavaScript and CSS files.
 
 #### Part 2: Optimize Frames per Second in pizza.html
-* Declare a new variables outside the loops that holds the DOM queries, because loops are taking too much time when rendering the page and some elements only need to be declared one time.(line 572, 507, 361, 362, 363, 452, 480)
+* In general, I reduce the amount of work that needs to be calculated inside the loop, by declaring a new variables outside the loops.
+* Move DOM queries outside the loops, because it takes too much time when rendering the page layout.(line 572, 507, 361, 362, 363, 452, 480)
 * Add if condition to changePizzaSizes since all pizzas will have the same width, then no need to be calculated more than once.
 * Declare array length outside the loops.(line 546, 482)
 * Replace all querySelector with getElementById (lines: 410, 430, 487, 552, 407).
