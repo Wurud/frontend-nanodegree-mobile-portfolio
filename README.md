@@ -30,7 +30,7 @@ The objective of this project is to optimize this online portfolio for speed! In
 
 
 #### Steps to optimize PageSpeed Insights score for index.html
-*  Add async to JavaScript to prevent blocking when loading the page.
+*  Add async to JavaScript to allow the code to be executed asynchronously while the page continues the parsing process.
 *  Add media="print" to print.css link.
 *  Inline style in index.html to reduce the number of requests.
 *  Remove web fonts, since it's only taking so much time and doesn't add anything unique.
@@ -44,10 +44,10 @@ The objective of this project is to optimize this online portfolio for speed! In
 #### Part 2: Optimize Frames per Second in pizza.html
 * Replace all querySelector with getElementById (lines: 410, 430, 487, 552, 407).
 * Replace querySelectorAll with getElementsByClassName (lines: 543, 480)
-* In general declare a new variables outside the loops that holds the DOM queries, because loops are taking too much time when rendering the page and some elements only need to be declared one time.(line 572, 507, 361, 362, 363, 452, 480)
+* Declare a new variables outside the loops that holds the DOM queries, because loops are taking too much time when rendering the page and some elements only need to be declared one time.(line 572, 507, 361, 362, 363, 452, 480)
 * Declare array length outside the loops.(line 546, 482)
 * Since changePizzaSizes will apply the same pizza width for all pizzas, I added an if condition to calculate the dx and new width one time.
-* Add will-change: transform to randomPizzaContainer and mover in css file.
+* Add will-change: transform to randomPizzaContainer and mover in css file to tell the browser about an upcoming transformation.
 
 #### Resources
 * https://www.reddit.com/r/learnjavascript/comments/356k1v/confused_on_queryselector_and_getelementbyid/?st=j81tqjqk&sh=6c47b5a4
